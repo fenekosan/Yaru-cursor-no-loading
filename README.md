@@ -8,16 +8,6 @@ from Yaru, but redirects every cursor name a toolkit may resolve as
 "loading" to Yaru's static arrow sprite. The Yaru theme itself is not
 modified.
 
-## Why an override theme instead of a GNOME Shell extension
-
-On Wayland the loading cursor is requested by the launching application
-through the [`wp-cursor-shape-v1`](https://wayland.app/protocols/cursor-shape-v1)
-protocol. Mutter handles the request in C code and resolves the requested
-shape (`progress`, `wait`, …) against the active cursor theme before any
-signal reaches the GNOME Shell JavaScript layer. A Shell extension cannot
-intercept the cursor change, but it can be neutralised by making the
-active theme resolve those shapes to a non-animated sprite.
-
 ## What the script does
 
 `install`:
